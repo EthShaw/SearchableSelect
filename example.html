@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Searchable Select Example</title>
+        <!-- Just add the searchableSelect css to your main css file -->
+        <link rel="stylesheet" href="style.css" />
+        <!-- And add searchableSelect.js to your webpage -->
+        <script src="searchableSelect.js"></script>
+    </head>
+    <body>
+
+        <!--
+            Have a div with a an input of type text or search,
+            and an unordered list of values.
+        -->
+        <p>Select a state: </p>
+        <div id="mySelect">
+            <input type="text" />
+            <br />
+            
+            <ul id="filterInputList">
+                <!--
+                    The value data attribute is how the value of each list item
+                    is specified, and is required.
+                -->
+                <li data-value="AL">Alabama</li>
+                <li data-value="AK">Alaska</li>
+                <li data-value="AZ">Arizona</li>
+                <li data-value="AR">Arkansas</li>
+                <li data-value="CA">California</li>
+                <li data-value="CO">Colorado</li>
+                <li data-value="CT">Connecticut</li>
+                <li data-value="DE">Delaware</li>
+                <li data-value="FL">Florida</li>
+                <li data-value="GA">Georgia</li>
+                <li data-value="HI">Hawaii</li>
+                <li data-value="ID">Idaho</li>
+                <li data-value="IL">Illinois</li>
+                <li data-value="IN">Indiana</li>
+                <li data-value="IA">Iowa</li>
+                <li data-value="KS">Kansas</li>
+                <li data-value="KY">Kentucky</li>
+                <li data-value="LA">Louisiana</li>
+                <li data-value="ME">Maine</li>
+                <li data-value="MD">Maryland</li>
+                <li data-value="MA">Massachusetts</li>
+                <li data-value="MI">Michigan</li>
+                <li data-value="MN">Minnesota</li>
+                <li data-value="MS">Mississippi</li>
+                <li data-value="MO">Missouri</li>
+                <li data-value="MT">Montana</li>
+                <li data-value="NE">Nebraska</li>
+                <li data-value="NV">Nevada</li>
+                <li data-value="NH">New Hampshire</li>
+                <li data-value="NJ">New Jersey</li>
+                <li data-value="NM">New Mexico</li>
+                <li data-value="NY">New York</li>
+                <li data-value="NC">North Carolina</li>
+                <li data-value="ND">North Dakota</li>
+                <li data-value="OH">Ohio</li>
+                <li data-value="OK">Oklahoma</li>
+                <li data-value="OR">Oregon</li>
+                <li data-value="PA">Pennsylvania</li>
+                <li data-value="RI">Rhode Island</li>
+                <li data-value="SC">South Carolina</li>
+                <li data-value="SD">South Dakota</li>
+                <li data-value="TN">Tennessee</li>
+                <li data-value="TX">Texas</li>
+                <li data-value="UT">Utah</li>
+                <li data-value="VT">Vermont</li>
+                <li data-value="VA">Virginia</li>
+                <li data-value="WA">Washington</li>
+                <li data-value="WV">West Virginia</li>
+                <li data-value="WI">Wisconsin</li>
+                <li data-value="WY">Wyoming</li>
+            </ul>
+        </div>
+        
+
+        <script>
+            // Usage:
+            var selectDiv = document.getElementById('mySelect');
+
+            var searchableSelect = new SearchableSelect(selectDiv, function(value) {
+                // This callback function is called whenever an item is selected
+                
+                // If nothing is selected, the value is ''
+                if (value == '') {
+                    value = 'nothing';
+                }
+
+                alert('You selected the state with the abbreviation ' + value + '!');
+            });
+        </script>
+    </body>
+</html>
